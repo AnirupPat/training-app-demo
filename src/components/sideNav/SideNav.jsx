@@ -11,6 +11,7 @@ import { useRecoilState } from "recoil";
 import { appState } from "../../store/app";
 import HomeIcon from "@mui/icons-material/Home";
 import MenuItem from "../menuItem/MenuItem";
+import styles from "./SideNav.module.scss";
 
 const drawerWidth = window.innerWidth > 500 ? 300 : window.innerWidth;
 console.log("drawerWidth", drawerWidth);

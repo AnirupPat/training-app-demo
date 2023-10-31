@@ -1,13 +1,11 @@
 .pieChartCard {
   margin: 5px;
   min-width: 500px;
-  width: 500px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .pieChartCard {
     min-width: 100% !important;
     max-width: 100px !important;
-    width: 100px !important;
   }
 }

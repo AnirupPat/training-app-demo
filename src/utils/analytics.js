@@ -26,4 +26,12 @@ export const techDashboard = [
     ],
     title: "Cloud Technologies spread",
   },
+  {
+    data: [
+      { id: 0, value: 20, label: "AI" },
+      { id: 1, value: 40, label: "ML" },
+      { id: 2, value: 0, label: "DL" },
+    ],
+    title: "AI Core Technologies spread",
+  },
 ];
