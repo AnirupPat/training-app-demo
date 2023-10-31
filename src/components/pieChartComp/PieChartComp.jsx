@@ -9,15 +9,21 @@ const PieChartComp = ({ data, title }) => {
   const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 800) setWidth(400);
+      if (window.innerWidth > 500) setWidth(400);
       else setWidth(250);
     });
-    if (window.innerWidth > 800) setWidth(400);
+    if (window.innerWidth > 500) setWidth(400);
     else setWidth(250);
   }, []);
   return (
     <div className={styles.pieChartCard}>
-      <Card sx={{ minWidth: 150 }}>
+      <Card
+        sx={{
+          minWidth: 150,
+          borderRadius: 2,
+          boxShadow: "10px 10px 10px 10px #888888",
+        }}
+      >
         <CardContent>
           <PieChart
             series={[

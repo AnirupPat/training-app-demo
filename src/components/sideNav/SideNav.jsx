@@ -6,7 +6,6 @@ import { ImProfile } from "react-icons/im";
 import { IoIosSettings } from "react-icons/io";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { BiSolidDashboard } from "react-icons/bi";
-import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { appState } from "../../store/app";
 import HomeIcon from "@mui/icons-material/Home";
@@ -64,7 +63,6 @@ const Drawer = styled(MuiDrawer, {
 const SideNav = () => {
   const theme = useTheme();
   const [open, setOpen] = useRecoilState(appState);
-  const navigate = useNavigate();
 
   return (
     <Drawer variant="permanent" open={open.sideNavOpen}>
@@ -78,7 +76,7 @@ const SideNav = () => {
         <MenuItem
           title="Individual Team Dashboard"
           icon={<BiSolidDashboard size={20} />}
-          route={`${open.selectedTeam}/team/teamDashboard`}
+          route={`/team/${open.selectedTeam}/teamDashboard`}
         />
         <MenuItem
           title="Employees"

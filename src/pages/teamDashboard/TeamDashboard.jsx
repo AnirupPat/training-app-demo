@@ -9,6 +9,7 @@ import { useRecoilState } from "recoil";
 import { Select, MenuItem, InputLabel, FormControl } from "@mui/material";
 
 import { appState } from "../../store/app";
+import { useNavigate } from "react-router-dom";
 
 const PieChart = ({ dashboardData }) => (
   <div className={styles.home}>
@@ -18,6 +19,7 @@ const PieChart = ({ dashboardData }) => (
   </div>
 );
 const TeamDashboard = () => {
+  const navigate = useNavigate();
   const [appSetting, setAppSetting] = useRecoilState(appState);
   const [dashboardData, setDashboardData] = useState(teamDashboard);
   const [teamData, setTeamsData] = useState(teams);
@@ -30,6 +32,7 @@ const TeamDashboard = () => {
         selectedTeam: event.target.value,
       };
     });
+    navigate(`/team/${event.target.value}/teamDashboard`);
   };
   return (
     <>
@@ -42,7 +45,7 @@ const TeamDashboard = () => {
           <FormControl sx={{ m: 1, minWidth: 200 }}>
             <InputLabel id="demo-simple-select-label">Select Team</InputLabel>
             <Select
-              // value={age}
+              value={appSetting.selectedTeam}
               onChange={handleTeamSelect}
               minWidth={100}
               // autoWidth
@@ -54,7 +57,9 @@ const TeamDashboard = () => {
             </Select>
           </FormControl>
         </Box>
-        <Box sx={{ display: "flex", padding: "10px" }}>
+        <Box
+          sx={{ display: "flex", padding: "10px", justifyContent: "center" }}
+        >
           <SideNav />
           {window.innerWidth < 600 && !open.sideNavOpen && (
             <PieChart dashboardData={dashboardData} />

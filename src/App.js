@@ -14,10 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
-          <Route
-            path={`${appSetting.selectedTeam}/team/teamDashboard`}
-            element={<TeamDashboard />}
-          />
+          <Route path="team/:team/teamDashboard" element={<TeamDashboard />} />
           <Route path="profile" element={<Profile />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
