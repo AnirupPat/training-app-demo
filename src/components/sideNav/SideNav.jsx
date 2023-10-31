@@ -12,9 +12,8 @@ import { appState } from "../../store/app";
 import HomeIcon from "@mui/icons-material/Home";
 import MenuItem from "../menuItem/MenuItem";
 
-console.log(window.innerWidth);
 const drawerWidth = window.innerWidth > 500 ? 300 : window.innerWidth;
-
+console.log("drawerWidth", drawerWidth);
 const openedMixin = (theme) => ({
   width: drawerWidth,
   transition: theme.transitions.create("width", {

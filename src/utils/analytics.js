@@ -18,4 +18,12 @@ export const techDashboard = [
     ],
     title: "Backend Technologies spread",
   },
+  {
+    data: [
+      { id: 0, value: 50, label: "AWS" },
+      { id: 1, value: 40, label: "Azure" },
+      { id: 2, value: 10, label: "GCP" },
+    ],
+    title: "Cloud Technologies spread",
+  },
 ];
