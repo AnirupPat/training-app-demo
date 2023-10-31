@@ -17,6 +17,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { useRecoilState } from "recoil";
 import { appState } from "../../store/app";
+import { useNavigate } from "react-router-dom";
 
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
   zIndex: theme.zIndex.drawer + 1,
@@ -63,6 +64,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function NavBar() {
+  const navigate = useNavigate();
   const [appSetting, setAppSetting] = useRecoilState(appState);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -72,6 +74,10 @@ export default function NavBar() {
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
+  };
+
+  const handleIconClick = () => {
+    navigate("/");
   };
 
   const handleMenuIconClick = () => {
@@ -188,14 +194,22 @@ export default function NavBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
+          {/* <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ display: { xs: "none", sm: "block" } }}
           >
             Kaplan
-          </Typography>
+          </Typography> */}
+          <Box>
+            <img
+              onClick={handleIconClick}
+              src="/kaplan-logo-big.jpeg"
+              alt="react logo"
+              style={{ width: "100px" }}
+            />
+          </Box>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton

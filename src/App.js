@@ -6,6 +6,7 @@ import { useRecoilState } from "recoil";
 import TeamDashboard from "./pages/teamDashboard/TeamDashboard";
 import "./App.css";
 import { appState } from "./store/app";
+import Login from "./pages/login/Login";
 
 function App() {
   const [appSetting, setAppSetting] = useRecoilState(appState);
@@ -16,6 +17,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="team/:team/teamDashboard" element={<TeamDashboard />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="login" element={<Login />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
       </BrowserRouter>
