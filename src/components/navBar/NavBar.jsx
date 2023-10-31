@@ -77,6 +77,7 @@ export default function NavBar() {
   const handleMenuIconClick = () => {
     setAppSetting((prevSetting) => {
       return {
+        ...prevSetting,
         sideNavOpen: !prevSetting.sideNavOpen,
       };
     });

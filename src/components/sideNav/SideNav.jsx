@@ -14,7 +14,6 @@ import MenuItem from "../menuItem/MenuItem";
 import styles from "./SideNav.module.scss";
 
 const drawerWidth = window.innerWidth > 500 ? 300 : window.innerWidth;
-console.log("drawerWidth", drawerWidth);
 const openedMixin = (theme) => ({
   width: drawerWidth,
   transition: theme.transitions.create("width", {
@@ -79,7 +78,7 @@ const SideNav = () => {
         <MenuItem
           title="Individual Team Dashboard"
           icon={<BiSolidDashboard size={20} />}
-          route="/teamDashboard"
+          route={`${open.selectedTeam}/team/teamDashboard`}
         />
         <MenuItem
           title="Employees"

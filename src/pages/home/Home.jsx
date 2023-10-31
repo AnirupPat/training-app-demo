@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import styles from "./Home.module.scss";
 import NavBar from "../../components/navBar/NavBar";
 import SideNav from "../../components/sideNav/SideNav";
-import Grid from "@mui/material/Grid";
 import { appState } from "../../store/app";
 import PieChartComp from "../../components/pieChartComp/PieChartComp";
 import { techDashboard } from "../../utils/analytics";
@@ -19,7 +18,6 @@ const PieChart = ({ dashboardData }) => (
 const Home = () => {
   const [dashboardData, setDashboardData] = useState(techDashboard);
   const [open, setOpen] = useRecoilState(appState);
-  console.log("open", open);
   return (
     <>
       <div className={styles.main}>
@@ -33,7 +31,6 @@ const Home = () => {
           {window.innerWidth > 600 && (
             <PieChart dashboardData={dashboardData} />
           )}
-          {/* <PieChart dashboardData={dashboardData} /> */}
         </Box>
       </div>
     </>

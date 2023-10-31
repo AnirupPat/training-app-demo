@@ -7,7 +7,6 @@ import { Typography } from "@mui/material";
 
 const PieChartComp = ({ data, title }) => {
   const [width, setWidth] = useState(window.innerWidth);
-  console.log("width", width);
   useEffect(() => {
     window.addEventListener("resize", () => {
       if (window.innerWidth > 800) setWidth(400);
@@ -15,7 +14,6 @@ const PieChartComp = ({ data, title }) => {
     });
     if (window.innerWidth > 800) setWidth(400);
     else setWidth(250);
-    console.log("width", width);
   }, []);
   return (
     <div className={styles.pieChartCard}>
