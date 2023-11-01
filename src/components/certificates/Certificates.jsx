@@ -35,13 +35,13 @@ const Certificate = ({ title, issuer, date }) => (
               color: "white",
             }}
           >
-            <div className={styles.month}>Oct</div>
-            <div className={styles.year}>2023</div>
+            <div className={styles.month}>
+              {new Date(date).toLocaleString("default", { month: "long" })}
+            </div>
+            <div className={styles.year}>{new Date(date).getFullYear()}</div>
           </Grid>
           <Grid item xs={8} className={styles.grid}>
-            <div className={styles.title}>
-              Exam AZ-900: Microsoft Azure Fundamentals.
-            </div>
+            <div className={styles.title}>{title}</div>
           </Grid>
           <Grid
             item
