@@ -1,0 +1,22 @@
+.certificate {
+  margin-bottom: 10px;
+  //   border-radius: 1;
+  .grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .month {
+      font-size: 20px;
+    }
+    .year {
+      font-size: 25px;
+    }
+    .title {
+      font-weight: 800;
+      font-size: 20px;
+    }
+    .actions {
+      width: 100%;
+    }
+  }
+}
