@@ -76,7 +76,7 @@ const SideNav = () => {
         <MenuItem
           title="Individual Team Dashboard"
           icon={<BiSolidDashboard size={20} />}
-          route={`/team/${open.selectedTeam}/teamDashboard`}
+          route={`/team/${open.selectedTeam}/dashboard`}
         />
         <MenuItem
           title="Employees"

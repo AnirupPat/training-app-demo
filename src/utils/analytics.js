@@ -52,9 +52,6 @@ export const teamDashboard = [
       { id: 0, value: 30, label: "React" },
       { id: 1, value: 10, label: "Node" },
       { id: 2, value: 5, label: "Flutter" },
-      { id: 3, value: 15, label: "React Native" },
-      { id: 4, value: 10, label: "Android" },
-      { id: 5, value: 15, label: "Swift UI" },
     ],
     title: "Technologies spread",
     team: "HOME",
@@ -69,6 +66,24 @@ export const teamDashboard = [
       { id: 5, value: 15, label: "Swift UI" },
     ],
     title: "Technologies spread",
-    team: "HOME",
+    team: "ATOM",
+  },
+  {
+    data: [
+      { id: 0, value: 30, label: "React" },
+      { id: 1, value: 10, label: "Node" },
+      { id: 2, value: 5, label: "Testing" },
+    ],
+    title: "Technologies spread",
+    team: "LMS",
+  },
+  {
+    data: [
+      { id: 0, value: 25, label: "React" },
+      { id: 1, value: 25, label: "Node" },
+      { id: 5, value: 50, label: "Swift UI" },
+    ],
+    title: "Technologies spread",
+    team: "LMI",
   },
 ];

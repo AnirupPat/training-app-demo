@@ -74,7 +74,11 @@ const SignUp = () => {
             </Grid>
           </Grid>
           <Button
-            sx={{ marginTop: 2 }}
+            sx={{
+              marginTop: 2,
+              backgroundColor: "black",
+              "&:hover": { backgroundColor: "black" },
+            }}
             type="submit"
             fullWidth
             variant="contained"

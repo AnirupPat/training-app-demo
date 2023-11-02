@@ -31,15 +31,19 @@ const LogIn = () => {
           alignItems: "center",
         }}
       >
-        <Box>
+        <Box sx={{ marginBottom: 7 }}>
           <img
-            src="/kaplan-logo-big.jpeg"
+            src="/KAPLAN_purple_rgb.svg"
             alt="react logo"
-            style={{ width: "200px" }}
+            style={{ width: "300px" }}
           />
         </Box>
-        <Typography component="h1" variant="h5">
-          Log In
+        <Typography component="h1" variant="h5" sx={{ marginBottom: 5 }}>
+          Sign In
+        </Typography>
+        <Typography variant="subtitle1" sx={{ color: "#727272" }}>
+          Please enter your email address or username and password to log into
+          your account.
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
           <TextField

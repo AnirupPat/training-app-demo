@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavBar from "../../components/navBar/NavBar";
 import SideNav from "../../components/sideNav/SideNav";
 import PieChartComp from "../../components/pieChartComp/PieChartComp";
@@ -10,21 +10,30 @@ import { Select, MenuItem, InputLabel, FormControl } from "@mui/material";
 
 import { appState } from "../../store/app";
 import { useNavigate } from "react-router-dom";
+import { flushSync } from "react-dom";
 
-const PieChart = ({ dashboardData }) => (
-  <div className={styles.home}>
-    {dashboardData.map((val) => (
-      <PieChartComp key={val.title} data={val} title={val.title} />
-    ))}
-  </div>
-);
+const PieChart = ({ dashboardData }) => {
+  return (
+    <div className={styles.home}>
+      {dashboardData.map((val) => (
+        <PieChartComp key={val.title} data={val} title={val.title} />
+      ))}
+    </div>
+  );
+};
 const TeamDashboard = () => {
   const navigate = useNavigate();
   const [appSetting, setAppSetting] = useRecoilState(appState);
-  const [dashboardData, setDashboardData] = useState(teamDashboard);
-  const [teamData, setTeamsData] = useState(teams);
-  const [open, setOpen] = useRecoilState(appState);
+  const [dashboardData, setDashboardData] = useState([]);
+  const [teamData] = useState(teams);
+  const [open] = useRecoilState(appState);
 
+  useEffect(() => {
+    let selectedTeam = appSetting.selectedTeam;
+    setDashboardData(
+      teamDashboard.filter((data) => data.team === selectedTeam)
+    );
+  }, [dashboardData]);
   const handleTeamSelect = (event) => {
     setAppSetting((prevSetting) => {
       return {
@@ -32,7 +41,13 @@ const TeamDashboard = () => {
         selectedTeam: event.target.value,
       };
     });
-    navigate(`/team/${event.target.value}/teamDashboard`);
+    flushSync(() => {
+      setDashboardData(
+        dashboardData.filter((data) => data.team === event.target.value)
+      );
+    });
+
+    navigate(`/team/${event.target.value}/dashboard`);
   };
   return (
     <>
