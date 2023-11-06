@@ -10,6 +10,7 @@ import Divider from "@mui/material/Divider";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
+import CardMembershipIcon from "@mui/icons-material/CardMembership";
 import Logout from "@mui/icons-material/Logout";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -17,6 +18,7 @@ import Avatar from "@mui/material/Avatar";
 import { useRecoilState } from "recoil";
 import { appState } from "../../store/app";
 import { useNavigate } from "react-router-dom";
+import { GrCertificate } from "react-icons/gr";
 
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
   zIndex: theme.zIndex.drawer + 1,
@@ -92,6 +94,15 @@ export default function NavBar() {
     setMobileMoreAnchorEl(null);
   };
 
+  const handleLogout = () => {
+    navigate("/login");
+  };
+
+  const handleCertificateOpen = () => {
+    setAnchorEl(null);
+    navigate("/certificates");
+  };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -141,15 +152,12 @@ export default function NavBar() {
       <MenuItem onClick={handleClose}>
         <Avatar /> Profile
       </MenuItem>
-      <MenuItem onClick={handleClose}>
-        <Avatar /> My account
-      </MenuItem>
       <Divider />
-      <MenuItem onClick={handleClose}>
+      <MenuItem onClick={handleCertificateOpen}>
         <ListItemIcon>
-          <PersonAdd fontSize="small" />
+          <CardMembershipIcon fontSize="small" />
         </ListItemIcon>
-        Add another account
+        My Certificates
       </MenuItem>
       <MenuItem onClick={handleClose}>
         <ListItemIcon>
@@ -157,7 +165,7 @@ export default function NavBar() {
         </ListItemIcon>
         Settings
       </MenuItem>
-      <MenuItem onClick={handleClose}>
+      <MenuItem onClick={handleLogout}>
         <ListItemIcon>
           <Logout fontSize="small" />
         </ListItemIcon>

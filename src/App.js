@@ -8,6 +8,8 @@ import "./App.css";
 import { appState } from "./store/app";
 import Login from "./pages/login/Login";
 import SignUp from "./pages/signup/Signup";
+import Certificates from "./components/certificates/Certificates";
+import MyCertificates from "./components/certificates/MyCertificates";
 
 function App() {
   const [appSetting] = useRecoilState(appState);
@@ -18,6 +20,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="team/:team/dashboard" element={<TeamDashboard />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="certificates" element={<MyCertificates />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<SignUp />} />
           <Route path="*" element={<NoPage />} />

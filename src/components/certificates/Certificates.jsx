@@ -10,6 +10,7 @@ import {
 import React from "react";
 import { FaDownload } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
+import { GrCertificate } from "react-icons/gr";
 import styles from "./Certificates.module.scss";
 
 const Certificate = ({ title, issuer, date }) => (
@@ -73,9 +74,13 @@ const Certificate = ({ title, issuer, date }) => (
 
 const Certificates = ({ certificates }) => (
   <div>
-    <Typography sx={{ textAlign: "left", fontSize: 20 }}>
-      My Certifications
-    </Typography>
+    <div className={styles.title}>
+      <GrCertificate className={styles.icon} />
+      <Typography sx={{ textAlign: "left", fontSize: 30 }}>
+        My Certifications
+      </Typography>
+    </div>
+
     {certificates.map((certificate, index) => (
       <Certificate
         key={index}
