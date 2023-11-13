@@ -13,7 +13,12 @@ import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const navigate = useNavigate();
-  const handleSubmit = () => {
+  const handleNavigatetoLogin = (event) => {
+    event.preventDefault();
+    navigate("/login");
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
     navigate("/login");
   };
   return (
@@ -89,7 +94,7 @@ const SignUp = () => {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="/" variant="body2">
+              <Link onClick={handleNavigatetoLogin} variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>
